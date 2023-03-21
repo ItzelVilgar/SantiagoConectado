@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="imagenes/iconos/Recurso 2logotipo40.png" type="image/x-icon">
+    <title>Santiago conectado</title>
+    <link rel="stylesheet" href="Style.css">
+    <script src="https://kit.fontawesome.com/01c14b11f3.js" crossorigin="anonymous"></script>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=GFS+Neohellenic:ital,wght@0,400;0,700;1,400;1,700&family=Lato:wght@400;700&family=Montserrat:ital,wght@0,500;0,600;1,500;1,600&display=swap');
+      </style>
+
+</head>
+
+<body>
+    <!--header-->
+    <header class="block">
+        <nav>
+          <div class="menu-container">
+            
+            <a href="index.html" class="logo">
+              <img src="imagenes/iconos/Recurso 2logotipo40.png" alt="Logotipo" class="logo-img">
+              <h2 class="nombre-empresa">Santiago conectado</h2>
+            </a>
+            <input type="checkbox" id="check">
+            <label for="check" class="checkbtn">
+              <img class="menu-ico" src="images/iconos/menu.png" alt="Menu">
+            </label>
+            <ul>
+              
+                <button id="myBtn"><img src="imagenes/iconos/iniciar-sesion.png" class="sublogo header-item sublogo-img"></button>
+              </li>
+              <li>
+                <a class="header-menu-tab" href="">Cerrar sesion              
+                </a>
+              </li>
+
+            </ul>
+          </div>
+        </nav>
+      </header>
+<!--modal-->
+      <div id="myModal" name="myModal" class="modal">
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <form action="">
+            <h1 class="modal-ins">Bienvenido</h1>
+            <ul>
+              <li>
+                <img class="icoins" src="imagenes/iconos/hombre.png">
+                <label>
+                  <input class="formins" type="text" id="user" placeholder="Usuario"> 
+                </label>
+              </li>
+              <li>
+                <img class="icoins" src="imagenes/iconos/cerrar-con-llave.png">
+                <label>
+                  <input class="formins" type="password" id="password" placeholder="Contraseña"> 
+                </label>
+              </li>
+
+            </ul>
+            <button id="btninicio">Iniciar</button>
+          </form>
+          
+        </div>
+      </div>
+<!--menu lateral-->
+<div class="lateral">
+  <div class="lateral-opcion">
+    <a href="registro.html">
+      <img class="icolat" src="imagenes/iconos/add-file.png"title="Registro">
+      <h3>Registro</h3>
+    </a>
+  </div>
+
+  <div class="lateral-opcion">
+    <a href="modificacion.html">
+      <img class="icolat" src="imagenes/iconos/localizacion.png"title="Registro">
+      <h3>Visualizar rutas</h3>
+    </a>
+  </div>
+  <div class="lateral-opcion"></div>
+  <div class="lateral-opcion"></div>
+
+</div>
+
+
+
+<!--registro-->
+<form action="procesar.php" method="post">
+   <div class="Registro">
+    
+    <h1>Registro de rutas</h1>
+    
+    <div class="ruta">
+        
+      <div class="pregunta">
+        
+        <input type="text" id="Ruta"required="required">
+        <span>Nombre de la ruta</span>
+        </div>
+        <div class="pregunta"></div>
+        <div class="pregunta">
+        
+        <input type="text" id="inicior"required="required">
+        <span>Inicio de ruta</span>
+        </div>
+
+        <div class="pregunta-number">
+        
+        <input type="time" id="horai"required="required">
+        <span>Hora de inicio</span>
+        </div>
+        <div class="pregunta">
+        
+        <input type="text" id="terminor"required="required">
+        <span>Termino de ruta</span>
+        </div>
+
+        <div class="pregunta-number">
+        
+        <input type="time" id="horat" required="required">
+        <span>Hora de termino</span>
+        </div>
+
+        <div class="pregunta">
+        <label for="intervalo">Intervalo de tiempo:</label>
+            <select id="tiempo" name="tiempo">
+            <option value="-" valid="none">--</option>
+            <option value="5">5 minutos</option>
+            <option value="10">10 minutos</option>
+            <option value="15">15 minutos</option>
+            <option value="20">20 minutos</option>
+            <option value="25">25 minutos</option>
+            <option value="30">30 minutos</option>
+            <option value="35">35 minutos</option>
+            <option value="40">40 minutos</option>
+            <option value="45">45 minutos</option>
+            <option value="50">50 minutos</option>
+            <option value="55">55 minutos</option>
+            <option value="60">60 minutos</option>
+            </select>
+        </div>
+        </div>
+
+      <div class="titulo2">
+          <h2>Fotos</h2>
+        </div><br>
+        <div class="titulo2"><p>Si desea eliminar una foto, solo de click sobre ella</p></div>
+        <div class="Fotos">
+          <section id="Images">
+          <div class="add-photo-container">
+            <div class="col-photo">
+              <div class="add-new-photo" id="add-photo">
+                <i class="fa-thin fa-images"></i>
+              </div>
+            </div>
+            <input type="file" multiple id="add-new-photo" name="images[]">
+          </div>
+        </section>
+        </div>
+        
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+
+    
+
+
+        <div class="titulo2"><h2>Detalles</h2></div>
+    <div class="Detalles">
+      <div class="pregunta-number">
+        
+        <input type="number" id="costo" name="costo" min="0" step="0.01" placeholder="0.00" required="required">
+        <span>Cobro de pasaje</span>
+        </div>
+        <div class="pregunta-number">
+        
+        <input type="number" id="Distancia"required="required">
+        <span>Distancia recorrida en Km</span>
+        </div>
+      
+
+  <div class="pregunta">
+          <label for="intervalo">Numero de paradas:</label>
+              <select id="intervalo" name="intervalo">
+                <option value="-">-</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+              <option value="10">10</option>
+              <option value="11">11</option>
+              <option value="12">12</option>
+              <option value="13">13</option>
+              <option value="14">14</option>
+              <option value="15">15</option>
+              </select>
+          </div>
+        
+          <div class="pregunta">
+        
+        <input type="text" id="Observaciones"required="required">
+        <span>Observaciones adicionales</span>
+        </div>
+    </div>
+
+    <div class="titulo2"><h2>Paradas oficiales</h2></div>
+    <div class="Paradas" style="align-content: center; justify-content: center;">
+      <div class="Paradas" style="display: flex;"></div>
+
+      <div class="boton">
+        <button class="custom-btn btn-5"><span style="font-size: 25px;display: flex; padding: 2px 23px;">Guardar</span></button>
+      </div>
+</div> 
+</form>
+
+<script src="Registro.js"></script>
+<script src="modal.js"></script>
+</body>
+</html>
